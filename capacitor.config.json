@@ -1,0 +1,13 @@
+{
+  "appId": "com.deadlink.game",
+  "appName": "DEADLINK",
+  "webDir": "www",
+  "backgroundColor": "#0d0a14",
+  "android": {
+    "backgroundColor": "#0d0a14",
+    "allowMixedContent": false
+  },
+  "plugins": {
+    "StatusBar": { "overlaysWebView": false, "backgroundColor": "#0d0a14", "style": "DARK" }
+  }
+}

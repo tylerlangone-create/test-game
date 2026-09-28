@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#0d0a14">
+<meta name="mobile-web-app-capable" content="yes">
+<title>DEADLINK</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app" class="mode-title">
+
+  <!-- HUD shown during a run -->
+  <div id="hud">
+    <canvas id="hudPort" width="32" height="32"></canvas>
+    <div class="hudcol"><div id="hudCls" class="t1"></div><div class="xpbar"><i id="hudXp"></i></div></div>
+    <div class="hudmid"><div id="hudFloor" class="t1"></div><div id="hudBiome" class="t2"></div></div>
+    <div class="hudchips"><span id="hudChips" class="t1"></span></div>
+  </div>
+
+  <!-- the pixel scene -->
+  <div id="stage">
+    <canvas id="scene"></canvas>
+    <div id="foeHud">
+      <div class="fh-row"><span id="foeTag" class="tag"></span><span id="foeName" class="t1"></span><span id="foeEl" class="fh-el"></span></div>
+      <div class="bar big" id="foeBar"><i class="trail"></i><i class="fill"></i><b id="foeHpT"></b></div>
+      <div class="fh-row"><div class="sts" id="foeSts"></div><div id="foeIntent"></div></div>
+    </div>
+    <div id="fxLayer"></div>
+    <div id="ticker"></div>
+    <div id="banner"></div>
+    <div id="titleLogo">
+      <div class="logo" data-t="DEADLINK">DEADLINK</div>
+      <div class="sub">SIGNAL FROM THE BOTTOM OF THE STACK</div>
+    </div>
+  </div>
+
+  <!-- bottom panel: one pane at a time -->
+  <div id="panel">
+    <div class="pane" id="paneTitle">
+      <button class="pb primary" id="bJack">JACK IN</button>
+      <button class="pb" id="bResume" style="display:none">RESUME RUN</button>
+      <div class="brow"><button class="pb" id="bMeta">UPGRADES</button><button class="pb" id="bCodex0">CODEX</button></div>
+      <div class="brow"><button class="pb small" id="bIntro">INTRO</button><button class="pb small" id="bMute"></button></div>
+      <div id="bootstat" class="t2 center"></div>
+    </div>
+
+    <div class="pane" id="paneNode">
+      <div id="whisper" class="t2 center"></div>
+      <div id="doors"></div>
+      <div id="descrow"><button class="pb primary big" id="bDescend">DESCEND</button></div>
+      <div class="brow">
+        <button class="pb small" id="bLoad">GEAR</button>
+        <button class="pb small" id="bCodex">CODEX</button>
+        <button class="pb small danger" id="bAbandon">ABANDON</button>
+      </div>
+    </div>
+
+    <div class="pane" id="paneBattle">
+      <div id="pStrip" class="pp">
+        <canvas id="pPort" width="32" height="32"></canvas>
+        <div class="pcol">
+          <div class="bar hp" id="pHpBar"><i class="trail"></i><i class="fill"></i><b id="pHpT"></b></div>
+          <div class="bar sp" id="pSpBar"><i class="fill"></i><b id="pSpT"></b></div>
+          <div class="sts" id="pSts"></div>
+        </div>
+      </div>
+      <div id="turnlab"></div>
+      <div id="skillgrid"></div>
+    </div>
+  </div>
+
+  <!-- full screens -->
+  <div class="scr" id="scrClass"><div class="scrhead"><span class="t1">CHOOSE YOUR RUNNER</span><span id="clsShards" class="t2"></span></div><div class="scroll" id="clslist"></div><button class="pb" id="bClassBack">BACK</button></div>
+  <div class="scr" id="scrLoad"><div class="scrhead"><span class="t1">GEAR</span><span id="ldChips" class="t2"></span></div><div class="scroll" id="ldBody"></div><button class="pb primary" id="bLoadBack">CLOSE</button></div>
+  <div class="scr" id="scrShop"><div class="scrhead"><span class="t1">CHIPS STATION</span><span id="shChips" class="t2"></span></div><canvas id="shopKeeper" width="34" height="40"></canvas><div class="scroll" id="shBody"></div><button class="pb primary" id="bShopBack">LEAVE</button></div>
+  <div class="scr" id="scrMeta"><div class="scrhead"><span class="t1">UPGRADE TERMINAL</span><span id="mtShards" class="t2"></span></div><div class="scroll" id="mtBody"></div><button class="pb primary" id="bMetaBack">BACK</button></div>
+  <div class="scr" id="scrCodex"><div class="scrhead"><span class="t1">CODEX</span><span id="cdxCount" class="t2"></span></div><div class="scroll" id="cdxBody"></div><button class="pb primary" id="bCodexBack">BACK</button></div>
+  <div class="scr" id="scrLog"><div class="scrhead"><span class="t1">COMBAT LOG</span></div><div class="scroll" id="blog"></div><button class="pb primary" id="bLogBack">CLOSE</button></div>
+  <div class="scr" id="scrEnd"><div id="endBody" class="scroll"></div></div>
+  <div class="scr" id="scrIntro">
+    <canvas id="introCv"></canvas>
+    <div id="introTxt"></div>
+    <div id="introTitle"><div class="logo" data-t="DEADLINK">DEADLINK</div></div>
+    <div class="flashwhite" id="fwhite"></div>
+    <button class="pb small" id="introSkip">SKIP &gt;&gt;</button>
+  </div>
+
+  <div id="modal"><div id="mbox" class="pp"></div></div>
+  <div id="ovlReward"></div>
+  <div id="toast"></div>
+</div>
+
+<script src="js/sprites.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/data.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

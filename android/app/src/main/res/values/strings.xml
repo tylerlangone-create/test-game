@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">DEADLINK</string>
+    <string name="title_activity_main">DEADLINK</string>
+    <string name="package_name">com.deadlink.game</string>
+    <string name="custom_url_scheme">com.deadlink.game</string>
+</resources>
